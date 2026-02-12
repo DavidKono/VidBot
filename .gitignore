@@ -3,9 +3,9 @@ music/*
 bgs/*
 vids/*
 
-!music/
-!bgs/
-!vids/
+!music/.gitkeep
+!bgs/.gitkeep
+!vids/.gitkeep
 
 *.png
 *.json

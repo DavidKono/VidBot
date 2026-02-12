@@ -1,8 +1,10 @@
 from playwright.sync_api import sync_playwright
 import time
 import requests
+import os
 
 folder = "bgs"
+os.makedirs(folder, exist_ok=True)
 
 def is_vertical(w, h):
     ratio = h/w

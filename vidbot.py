@@ -9,6 +9,8 @@ from datetime import datetime
 import json
 import sys
 
+os.makedirs("vids", exist_ok=True)
+
 def get_text(w, h, text, font_size):
 
     words = text.split()

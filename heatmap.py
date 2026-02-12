@@ -1,6 +1,9 @@
 from yt_dlp import YoutubeDL
 import json
 import re
+import os
+
+os.makedirs("music", exist_ok=True)
 
 def searchVideo(query):
     ydl_opts = {
@@ -69,6 +72,7 @@ names = json.loads(songs_json)
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+# yt dlp slow so run in parallel
 with ThreadPoolExecutor(max_workers=8) as executor:
     futures = [executor.submit(getClip, name) for name in names]
 
