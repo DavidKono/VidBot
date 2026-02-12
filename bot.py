@@ -5,8 +5,6 @@ quote_index = int(open("quotes_i.json").read())
 
 print(quote_index)
 
-# index = 
-
 quotes_raw = open("quotes.json").read()
 quotes = json.loads(quotes_raw)
 

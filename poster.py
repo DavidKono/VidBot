@@ -53,7 +53,27 @@ def main(quote_index):
         share_button = page.get_by_role("button", name="Share")
         share_button.click()
 
-        time.sleep(5)
+        time.sleep(60)
+
+        #follow a few people also
+        page.goto("https://www.instagram.com")
+        time.sleep(10)
+
+        suggested_container = page.locator("text=Suggested for you").nth(0).locator("..").locator("..").locator("..")
+
+        user_follow = suggested_container.locator("button:has-text('Follow')")
+        user_cards = user_follow.locator("..").locator("..").locator("..")
+
+        filtered_cards = [
+            user_cards.nth(i)
+            for i in range(user_cards.count())
+            if "Popular" not in user_cards.nth(i).inner_text()
+        ]
+
+        for card in filtered_cards:
+            follow_button = card.locator("button:has-text('Follow')")
+            time.sleep(3)
+            follow_button.click()
 
 if __name__ == "__main__":
     main(sys.argv[1])

@@ -8,3 +8,5 @@ I used each to extract about a hundred of each and then randomise selectin durin
 
 The VidBot simply generates videos consisting of fading text and a fading background for simple video generation.
 I query grok to generate text in a JSON file which suits my use case of creating quote videos.
+
+Posting automation is done with cron and a bash script.

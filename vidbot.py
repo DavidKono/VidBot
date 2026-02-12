@@ -1,4 +1,3 @@
-# from moviepy.editor import *
 from moviepy import *
 from moviepy.audio.fx import AudioFadeIn
 from moviepy.video.fx import FadeIn, Resize
